@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #8B2335; /* Dark red/maroon color from the header */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header-text h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.header-image img {
+    width: 300px;
+    height: auto;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#hero {
+    background: #f4f4f4; /* Light grey background for hero section */
+    padding: 20px 0;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+#transport-info, #bus-routes, #contact-info {
+    padding: 20px 0;
+}
+
+#contact-info {
+    background: #8B2335; /* Dark red/maroon background */
+    color: #fff; /* White text */
+    padding: 20px 0;
+}
+
+#contact-info h2 {
+    color: #fff; /* White text for the heading */
+}
+
+#contact-info p {
+    color: #fff; /* White text for paragraphs */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #8B2335; /* Dark red/maroon color for headings */
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #333; /* Dark grey for text */
+}
+
+.btn {
+    background: #8B2335; /* Dark red/maroon color for buttons */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #6b1a2b; /* Darker shade for hover effect */
+}
+
+footer {
+    background: #fff; /* White background for footer */
+    color: #8B2335; /* Dark red/maroon text for footer */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-section {
+    margin-bottom: 20px;
+}
+
+footer .footer-section h2 {
+    margin-bottom: 10px;
+    color: #8B2335; /* Dark red/maroon color for footer headings */
+}
+
+footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-section ul li a {
+    color: #8B2335; /* Dark red/maroon text for footer links */
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-image img {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Main bus website</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathyabama Student Transport</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://i.ibb.co/cywbmSP/uni-logo.png" alt="Sathyabama Student Transport Logo">
+                </div>
+                <div class="header-text">
+                    <h1>SATHYABAMA INSTITUTE OF SCIENCE AND TECHNOLOGY</h1>
+                    <h2>(DEEMED TO BE UNIVERSITY)</h2>
+                </div>
+                <div class="header-image">
+                    <img src="https://i.ibb.co/kJ6MMJ9/bus-image.jpg" alt="Bus Image">
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://www.sathyabama.ac.in">Home</a></li>
+                    <li><a href="https://www.sathyabama.ac.in/about-us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="https://www.sathyabama.ac.in/contactus">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Welcome to Sathyabama Student Transport</h1>
+                <p>Your reliable partner in daily commute</p>
+            </div>
+        </section>
+
+        <section id="transport-info">
+            <div class="container">
+                <h2>Transport Information</h2>
+                <p>The Institution holds a robust transport system facilitating easy mobility of students and staff from every nook and corner of the city to campus. 
+Ample numbers of buses are operated every day and hassle free journey is an experience of people travel to the campus. 
+Safety and Security are always given prime importance, experienced drivers operate our buses and the transport department provides timely updates related to any change in bus-routes through our website.</p>
+
+<p>More than 150 buses transit students and the faculty members from various points in the city and also from the suburbs like Ennore, Pattabiram, Thiruvallur, Red Hills, Chengleput,  Thiruvettriyur, Kancheepuram.</p>
+            </div>
+        </section>
+        
+        <section id="image-section">
+            <div class="container">
+                <img src="https://i.ibb.co/Pm1GPJG/Main-image.webp" alt="Transport Image" style="width:100%;">
+            </div>
+        </section>
+          <div class="container">
+         <p> • All the Buses reach the Campus before 8.45 A.M and leave the campus at 3.30 P.M. on regular working days</p>
+
+         <p> • Special buses are operated to support students attending placement training / Special Coaching Classes such as Civil Services Examinations / Accessing Library Facility. These buses generally leave the campus at 5.00 P.M. </p>
+         </div>
+
+        <section id="bus-routes">
+            <div class="container">
+                <h2>Bus Routes</h2>
+                <p>Explore our bus routes to find the most convenient options for your daily commute.</p>
+                <button class="btn" id="viewBusRoutes">View Bus Routes</button>
+                <ul id="busRoutesList"></ul> <!-- Added UL to display bus routes -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>Sathyabama Student Transport Coordinator,</p>
+                <p>Sathyabama Institute of Science and Technology</p>
+                <p>Contact No: 044-24503150</p>
+                <p>Email: transport@sathyabama.ac.in</p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('viewBusRoutes').addEventListener('click', function() {
+            fetch('http://127.0.0.1:8000/api/buses/')
+                .then(response => response.json())
+                .then(data => {
+                    const busRoutesList = document.getElementById('busRoutesList');
+                    busRoutesList.innerHTML = '';
+                    data.forEach(bus => {
+                        const li = document.createElement('li');
+                        li.textContent = `Route: ${bus.route_number}, Driver: ${bus.driver_name}, Departure: ${bus.departure_time}, Arrival: ${bus.arrival_time}`;
+                        busRoutesList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
